@@ -1,0 +1,153 @@
+<%- include('../partials/_header')%>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/circuito/<%= data.id %>?_method=PUT" method="post">
+                        <div class="form-group">
+                            Circuito:
+                            <select class="form-control" name="nombre"  >
+                                <option selected="selected">
+                                    <%=data.nombre%>
+                                    </option> 
+                                <option>SAKHIR</option>
+                                <option>IMOLA</option>
+                                <option>PORTIMAO</option>
+                                <option>CATALUNYA</option>
+                                <option>MONTECARLO</option>
+                                <option>BAKU CITY CIRCUIT</option>
+                                <option>PAUL RICARD</option>
+                                <option>RED BULL RING</option>
+                                <option>SILVERSTONE</option>
+                                <option>HUNGARORING</option>
+                                <option>SPA-FRANCORCHAMPS</option>
+                                <option>ZANDVOORT</option>
+                                <option>MONZA</option>
+                                <option>SOCHI</option>
+                                <option>ESTAMBUL</option>
+                                <option>LAS AMERICAS</option>
+                                <option>HERMANOS RODRIGUEZ</option>
+                                <option>INTERLAGOS</option>
+                                <option>LOSAIL</option>
+                                <option>YEDA</option>
+                                <option>YAS MARINA</option>
+                            </select>
+                        </div>
+                       
+                        <div class="form-group">
+                            Ciudad:
+                            <select class="form-control" name="ciudad">
+                                <option selected="selected">
+                                    <%=data.ciudad%>
+                                    </option> 
+                                <option>MANAMA</option>
+                                <option>IMOLA</option>
+                                <option>PORTIMAO (ALGARVE) </option>
+                                <option>BARCELONA</option>
+                                <option>MONTECARLO</option>
+                                <option>BAKU</option>
+                                <option>LE CASTELLET</option>
+                                <option>SPIELBERG</option>
+                                <option>SILVERSTONE</option>
+                                <option>MOGYOROD</option>
+                                <option>PROVINCIA DE LIEJA (BELGICA)</option>
+                                <option>HAARLEM (PAISES BAJOS)</option>
+                                <option>MONZA</option>
+                                <option>SOCHI</option>
+                                <option>ESTAMBUL</option>
+                                <option>AUSTIN</option>
+                                <option>CIUDAD DE MEXICO</option>
+                                <option>INTERLAGOS</option>
+                                <option>DOHA</option>
+                                <option>JEDDAH</option>
+                                <option>ISLA YAS</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            País:
+                            <select class="form-control" name="pais">
+                                <option selected="selected">
+                                    <%=data.pais%>
+                                    </option> 
+                                <option>ORIENTE MEDIO</option>
+                                <option>ITALIA</option>
+                                <option>PORTUGAL</option>
+                                <option>ESPAÑA</option>
+                                <option>MONACO</option>
+                                <option>ACERBAIYAN</option>
+                                <option>FRANCIA</option>
+                                <option>AUSTRIA</option>
+                                <option>GRAN BETRAÑA</option>
+                                <option>HUNGRIA</option>
+                                <option>BELGICA</option>
+                                <option>PAISES BAJOS</option>
+                                <option>RUSIA</option>
+                                <option>TURQUIA</option>
+                                <option>EEUU</option>
+                                <option>MEXICO</option>
+                                <option>BRASIL</option>
+                                <option>QATAR</option>
+                                <option>ARABIA SAUDI</option>
+                                <option>EMIRATOS ARABES</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            Url de Imágen de trazado:
+                            <select class="form-control" name="trazado">
+                                <option selected="selected">
+                                    <%=data.trazado%>
+                                    </option> 
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/bahrein.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/emilia-romagna.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/portugal.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/espana.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/monaco.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/azerbaiyan.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/francia.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/estiria.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/austria.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/gran-bretana.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/gran-bretana.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/hungria.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/belgica.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/paises-bajos.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/italia.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/rusia.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/turquia.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/eeuu.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/mexico.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/brasil.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/qatar.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/arabia-saudi.jpg</option>
+                                <option>https://e00-marca.uecdn.es/assets/v25/img/estaticas/motor/calendario/circuitos/formula1/abu-dhabi.jpg</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                           Número de Vueltas <input type="number" name="numVueltas" value="<%=data.numVueltas%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                           Longitud: <input type="number" name="longitud" value="<%=data.longitud%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            Nº Curvas lentas<input type="number" name="curvasLentas" value="<%=data.curvasLentas%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                           Nº Curvas medias <input type="number" name="curvasMedias" value="<%=data.curvasMedias%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                           Nº Curvas rapidas <input type="number" name="curvasRapidas" value="<%=data.curvasRapidas%>" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Editar Circuito
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/_footer')%>

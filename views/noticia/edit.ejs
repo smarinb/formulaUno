@@ -1,0 +1,31 @@
+<%- include('../partials/_header')%>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/noticia/<%= data.id %>?_method=PUT" method="post">
+                        <div class="form-group">
+                            <input type="text" name="titulo" value="<%=data.titulo%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="texto" value="<%=data.texto%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="url" name="permalink" value="<%=data.permalink%>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="url" name="imagen" value="<%=data.imagen%>" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Editar Noticia
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/_footer')%>
