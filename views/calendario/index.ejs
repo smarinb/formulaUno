@@ -1,0 +1,97 @@
+<%- include('../partials/_header')%>
+
+<div class="container">
+    <div class="row mt-5">
+
+
+      <% if(!logado || roll!='ADMIN'){%>
+            <div class="col-md-12">
+                <%}else{%>
+            <div class="col-md-8">
+                <%}%>
+            <div class="card">
+                <div class="card-body">
+                
+                <% if (data){ %>
+                    <% for(var i=0; i<data.length;i++){%>
+                        
+                            <h5 class="card-title">Fecha de celebración: <%=data[i].fecha.getDate()%>/<%=data[i].fecha.getMonth() + 1%>/<%=data[i].fecha.getFullYear()%></h5>
+                            <p class="card-text">Circuito: <%= data[i].nombre %></p>
+                            
+                            <% if(logado){ %>
+                                <% if(roll=='ADMIN'){%>
+                                
+                            <form action="/calendario/<%= data[i].id %>?_method=DELETE" method="post">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-danger">
+                                        Eliminar circuito
+                                    </button>
+                                </div>
+                            </form>
+                            <%}%>
+                            <%}%>
+                            <hr class="mt-3">
+                        
+                    <%}%>
+                <%}%>
+                
+            
+                </div>
+            </div>
+
+        </div>
+
+        <% if(logado){ %>
+            <% if(roll=='ADMIN'){%>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/calendario" method="post">
+                        <div class="form-group">
+                            <input type="date" name="fecha" placeholder="Fecha de la carrera" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            Circuito:
+                            <select class="form-control" name="nombre">
+                                <option>SAKHIR</option>
+                                <option>IMOLA</option>
+                                <option>PORTIMAO</option>
+                                <option>CATALUNYA</option>
+                                <option>MONTECARLO</option>
+                                <option>BAKU CITY CIRCUIT</option>
+                                <option>PAUL RICARD</option>
+                                <option>RED BULL RING</option>
+                                <option>SILVERSTONE</option>
+                                <option>HUNGARORING</option>
+                                <option>SPA-FRANCORCHAMPS</option>
+                                <option>ZANDVOORT</option>
+                                <option>MONZA</option>
+                                <option>SOCHI</option>
+                                <option>ESTAMBUL</option>
+                                <option>LAS AMERICAS</option>
+                                <option>HERMANOS RODRIGUEZ</option>
+                                <option>INTERLAGOS</option>
+                                <option>LOSAIL</option>
+                                <option>YEDA</option>
+                                <option>YAS MARINA</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="idCircuito" placeholder="Código del circuito" class="form-control">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            Guardar circuito en calendario
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <%}%>
+        <%}%>
+    </div>
+</div>
+
+<%- include('../partials/_footer')%>
